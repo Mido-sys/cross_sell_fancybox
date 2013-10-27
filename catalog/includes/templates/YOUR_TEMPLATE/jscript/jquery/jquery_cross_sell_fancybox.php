@@ -20,6 +20,9 @@ jQuery(document).ready(function() {
     'scrolling'     : 'auto',
     <?php if (AATC_STATUS == 'true') { ?>
 		afterShow: function() {
+			// do an AJAX get to the current page to avoid navigation issues
+			jQuery.get('ajax/product_info.php?products_id=<?php echo (int)$_GET['products_id']; ?>');
+			// bind AJAX add to cart functionality to form submit
 			jQuery('.fancybox-wrap form[name="cart_quantity"]').submit(function() {
  				var returnValue = performAATC(jQuery(this));
  				jQuery.fancybox.close(true);
