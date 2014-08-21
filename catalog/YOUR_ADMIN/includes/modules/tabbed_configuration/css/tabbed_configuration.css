@@ -39,11 +39,11 @@ input:focus{outline-width:0;}
 .mod-copyright{clear:both;color:#262626;padding-top:40px;text-align:right;}
 .mod-copyright span{display:block;margin-bottom:12px;}
 input:focus::-webkit-input-placeholder,input:focus::-moz-placeholder,input:focus:-ms-input-placeholder{opacity:.3;}
-@media screen and max-width 980px {
+@media screen and (max-width: 980px) {
 .wrap{padding-left:15px;padding-right:15px;}
 .mod-table td button{height:27px;line-height:27px;}
 }
-@media screen and max-width 768px {
+@media screen and (max-width: 768px) {
 .mod-header h1,.mod-header form{display:block;float:none;}
 .mod-tabs{display:none;}
 .mod-table{border-left:1px solid #B7B7B7;}
@@ -58,13 +58,13 @@ input:focus::-webkit-input-placeholder,input:focus::-moz-placeholder,input:focus
 .mod-tabs-content input[type=text]{margin-bottom:2px;}
 .mod-tabs-content h2,.mod-table,.mod-table thead,.mod-table tbody,.mod-table th,.mod-table td,.mod-table tr{display:block;}
 }
-@media screen and max-width 480px {
+@media screen and (max-width: 480px) {
 .wrap{padding-bottom:10px;}
 .mod-header h1{font-size:18px;line-height:18px;margin-bottom:0;}
 .mod-footer .mod-display-quantity{display:block;float:none;}
 .mod-footer .mod-nav-pages{float:left;margin-top:10px;}
 }
-@media screen and max-width 320px {
+@media screen and (max-width: 320px) {
 #tabs .mod-buttons button,#tabs .mod-buttons a{display:block;margin-bottom:10px;width:100%;}
 #tabs .mod-buttons .mod-buttons-second{margin-bottom:0;}
 }
