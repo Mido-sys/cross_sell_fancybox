@@ -1,4 +1,15 @@
 <?php
+
+/*
+ * 
+ * @package Cross Sell Fancy Box
+ * @copyright Numinix Web Development
+ * @copyright Copyright 2003-2015 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * 
+ */
+
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
 }
@@ -57,6 +68,8 @@ if (!function_exists('plugin_version_check_for_updates')) {
         $lookup_index = 0;
         $url = 'http://www.zen-cart.com/downloads.php?do=versioncheck' . '&id=' . (int) $fileid;
         $data = json_decode(file_get_contents($url), true);
+        if (!$data || !is_array($data))
+            return false;
         // compare versions
         if (version_compare($data[$lookup_index]['latest_plugin_version'], $version_string_to_check) > 0) {
             $new_version_available = TRUE;
@@ -74,7 +87,7 @@ if (!function_exists('plugin_version_check_for_updates')) {
 
 }
 
- // Version Checking 
+// Version Checking 
 if ($zencart_com_plugin_id != 0) {
     $new_version_details = plugin_version_check_for_updates($zencart_com_plugin_id, $current_version);
     if ($_GET['gID'] == $configuration_group_id && $new_version_details != FALSE) {
